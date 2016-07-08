@@ -3,7 +3,7 @@
 
 ###Live Prototype URL
 
-http://cherylaimee.github.io/p-blankslate-working/
+http://cherylaimee.github.io/player-interactions/
 
 ### Controller Support
 
