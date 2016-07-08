@@ -33,6 +33,12 @@
         if (arrowRight && (!$('body').hasClass('top')) && (!$('body').hasClass('mtc-on')) && (!$('body').hasClass('timeline-on')) && (!$('body').hasClass('drawer-on'))) {
                  $('body').addClass('end');
         }
+        
+        if (arrowLeft && ($('body').hasClass('end')) && (!$('body').hasClass('top')) && (!$('body').hasClass('mtc-on')) && (!$('body').hasClass('timeline-on')) && (!$('body').hasClass('drawer-on'))) {
+                 setTimeout(function () {
+                    $('body').removeClass('end');
+                 }, 5);
+        }
 
         if (enterButton && (!$('body').hasClass('top')) && (!$('body').hasClass('mtc-on')) && (!$('body').hasClass('timeline-on')) && (!$('body').hasClass('drawer-on'))) {
                  setTimeout(function () {
