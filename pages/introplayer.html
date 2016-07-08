@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>p-blankslate</title>
+    <link rel="stylesheet" href="./../css/default.css">
+    <link rel="stylesheet" href="./../css/branding.css">
+    <link rel="stylesheet" href="./../css/animations.css">
+    <link rel="stylesheet" href="./../css/backgrounds.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./../js/keyboard.js"></script>
+    <script type="text/javascript" src="./../js/player.js"></script>
+</head>
+
+<body class="overlay up-next-focused">
+
+    <div class="player-page">
+        <div class="header">
+            <div class="header-tiles">
+                <button id="headertile1" class="headertile" tabindex="0"></button>
+                <!--<button id="headertile2" class="headertile" tabindex="0"></button>-->
+                <button id="headertile3" class="headertile" tabindex="0"></button>
+            </div>
+        </div>
+
+        <div class="video-overlay">
+            <div class="mtc-container"></div>
+        </div>
+        </div>
+</body>
+
+</html>
+
+<script>
+  
+  window.onload = function() {
+            setInterval(function() {
+              window.location.href="./../pages/player.html"
+            }, 17000);
+            setInterval(function() {
+              $('body').removeClass('overlay');
+            }, 3000);  
+    };
+  
+  </script>

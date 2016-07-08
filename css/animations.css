@@ -1,0 +1,63 @@
+.scrim,
+.upnexttile,
+.headertile {
+    -webkit-transition: transform 0.12s;
+    -moz-transition: transform 0.12s;
+    transition: transform 0.12s;
+}
+
+.video-overlay,
+.video-container {
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+.header {
+    -webkit-transition: top 0.2s;
+    -moz-transition: top 0.2s;
+    transition: top 0.2s;
+}
+
+.menu-item {
+    -webkit-transition: background-size 0.2s;
+    -moz-transition: background-size 0.2s;
+    transition: background-size 0.2s;
+}
+
+
+.up-next-details {
+    -webkit-transition: transform 0.12s, opacity 0.1s linear 0.1s;
+    -moz-transition: transform 0.12s, opacity 0.1s linear 0.1s;
+    transition: transform 0.2s, opacity 0.15s;
+}
+
+#discover.active,
+#channels.active,
+.top .search-page .header {
+    -webkit-transition: background-image 0.08s, border 0.08s, top 0.2s; 
+    -moz-transition: background-image 0.08s, border 0.08s, top 0.2s; 
+    transition: background-image 0.08s, border 0.08s, top 0.2s; 
+}
+
+.tile.selected.focused .checkmark {
+    transition: background-size 0.2s 0.2s;
+    background-size: 88px 66px;
+    background-color: rgba(0,0,0,.85);
+}
+
+.tile.focused .checkmark {
+    background-color: rgba(0,0,0,.35);
+}
+
+.tile.selected .checkmark {
+    transition: background-size 0.2s;
+    background-size: 80px 60px;
+    background-color: rgba(0,0,0,.85);
+}
+
+.tile .checkmark {
+    transition: background-size 0.2s;
+    background-size: 0;
+    background-color: rgba(0,0,0,0);
+}

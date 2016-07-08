@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>p-blankslate</title>
+    <link rel="stylesheet" href="./../css/default.css">
+    <link rel="stylesheet" href="./../css/branding.css">
+    <link rel="stylesheet" href="./../css/animations.css">
+    <link rel="stylesheet" href="./../css/backgrounds.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./../js/keyboard.js"></script>
+    
+</head>
+
+<body class="top">
+
+    <div class="tiles-page">
+        <div class="staticheader header">
+            <div class="logo"></div>
+            <div class="header-nav">
+                <div id="channels" class="navitem" tabindex="0">Channels</div>
+                <div id="discover" class="navitem active" tabindex="0">Discover</div>
+                <div id="watchlist" class="navitem" tabindex="0">Watchlist</div>
+            </div>
+        </div>
+
+        <div class="channels tiles-container page-body">
+            <button id="tile1" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile2" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile3" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile4" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile5" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile6" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile7" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile8" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile9" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile10" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile11" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile12" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile13" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile14" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile15" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile16" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile17" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile18" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile19" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile20" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile21" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile22" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile23" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile24" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <button id="tile25" class="tile" tabindex="0">
+                <div class="scrim"></div>
+            </button>
+            <div class="margin"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+$(".tile").on('click', function(){
+     window.location = "./player.html";    
+});
+
+
+var distance = ($(window).height())/3
+
+var tileTop = $('.tile').filter(function () {
+    return $(this).offset().top < distance;
+});
+    
+tileTop.addClass('top');
+
+    window.onload = function() {
+        // short timeout
+        setTimeout(function() {
+            $(document.body).scrollLeft(0);
+        }, 5);      
+    };
+
+
+
+
+$(document).keydown(function(e) {
+        var scrollWidth = ($(window).width()/3);
+        var enterButton = ((e.which == 13) || (e.which === 13))
+        var arrowDown = (e.which == 40)
+        var arrowUp = (e.which == 38)
+        var arrowLeft = (e.which == 37)
+        var arrowRight = (e.which == 39)
+        var selectButton = (e.which == 83)
+        // var swipeUp = (e.which == 187)
+        // var swipeDown = (e.which == 189)
+        var scrollWidth = ($('.tile').outerWidth() + 24); //tile plus margin
+        var firstScrollWidth = (($('.tile').outerWidth() * .5) + 84); //half of tile + left margin + right margin
+        if (arrowRight) {
+                 $('body').addClass('right');
+                    setTimeout(function () {
+                        $('body').removeClass('right');
+                    }, 1);
+        }
+        if (arrowLeft) {
+                 $('body').addClass('left');
+                    setTimeout(function () {
+                        $('body').removeClass('left');
+                    }, 1);
+        }
+        if (arrowUp && ($('body button.focused').hasClass('top'))) {
+                $('body').addClass('top');
+                
+                $('body button.focused').prevAll('button').addClass('last');
+                $('.tile').navigate('destroy');
+        }
+        if (arrowDown && $('body').hasClass('top')) {
+                $('body').removeClass('top');
+                setTimeout(function () {
+                    $('body button').removeClass('last');
+                }, 1);
+                $('.tile:not(.last)').navigate({
+                    activeClass: 'focused',
+                    mouse: false,
+                    onFocus: function() {
+                }
+                });
+        }
+        if((arrowRight) && ($('body').hasClass('right')) && ($('body button.tile:nth-of-type(1)').hasClass('focused')) ){
+                $('html, body').one().animate({
+                    scrollLeft: '+=' + firstScrollWidth
+                }, 500);
+                console.log('what');
+        }
+        if((arrowRight) && ($('body').hasClass('right')) && (!$('body button.tile:nth-of-type(1)').hasClass('focused')) ){
+                $('html, body').one().animate({
+                    scrollLeft: '+=' + scrollWidth
+                }, 500);
+                console.log('sweet');
+        }
+        if((arrowLeft) && $('body').hasClass('left') ){
+                $('html, body').one().animate({
+                    scrollLeft: '-=' + scrollWidth
+                }, 500);
+                console.log('huh'); 
+        }
+        if (arrowRight && $('body').hasClass('top')) {
+            window.location.href="./../pages/search.html"
+        }
+        if (arrowLeft && $('body').hasClass('top')) {
+            window.location.href="./../pages/channels.html"
+        }
+});
+
+    // $('.tile').navigate({
+    //     activeClass: 'focused',
+    //     mouse: false,
+    //     onFocus: function() {
+    //   }
+    // });
+
+</script>
+
+</html>

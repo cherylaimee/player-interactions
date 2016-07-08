@@ -1,0 +1,163 @@
+body {
+    background-color: black;
+}
+
+.off {
+    display: none;
+}
+
+/*header height + page body height must be less than 100vh*/
+.header {
+    height: 145px;
+    width: 100vw;
+}
+.page-body {
+    height: 72vh;
+    position: relative;
+    margin-top: calc(145px + 60px);
+}
+
+
+.pitcherbox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url('./../images/pitcherbox.png');
+    background-repeat: no-repeat;
+    background-position: calc(100vw - 475px) calc(100vh - 734px);
+    opacity: 0;
+}
+
+.pitcherbox-on .pitcherbox {
+    opacity: 1;
+}
+
+.player-page .header {
+    background-color: transparent;
+    background-image: url(./../images/quickview.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.bottom .video-container.page-body {
+    opacity: 1;
+}
+
+.video-container.page-body {
+    height: 100vh;
+    margin-top: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.mtc{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./../images/mtc.png');
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    bottom: 40px;
+    opacity: 0;
+}
+
+.mtc-on .mtc {
+    opacity: 1;
+}
+
+.timeline{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./../images/timeline.png');
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    bottom: 40px;
+    opacity: 0;
+}
+
+.milestones-on.timeline-on .timeline {
+    background-image: url('./../images/timeline_u.png');
+}
+
+.timeline-on .timeline {
+    bottom: 220px;
+    background-image: url('./../images/timeline_s.png');
+}
+
+.drawer-on .timeline {
+    bottom: 450px;
+    background-image: url('./../images/timeline_simple.png');
+}
+
+.mtc-on .timeline,
+.timeline-on .timeline,
+.drawer-on .timeline {
+    opacity: 1;
+}
+
+.drawer-on.boxscore-focused .timeline {
+    opacity: 0;
+}
+
+.milestones{
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url('./../images/milestones_u.png');
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    bottom: 40px;
+    opacity: 0;
+    background-size: 97%;
+    background-size: auto 127px;
+}
+
+.timeline-on .milestones {
+    opacity: 1;
+}
+
+.milestones-on .milestones {
+    background-image: url('./../images/milestones_s.png');
+    background-size: auto 135px;
+}
+
+.drawer {
+    height: 420px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+}
+
+.drawer-on.boxscore-on.boxscore-focused .drawer {
+    background-image: url('./../images/boxscore_s.png');
+    height: 100%;
+}
+
+.drawer-on .drawer {
+    opacity: 1;
+}
+
+.drawer-on.stats-on .drawer{
+    background-image: url('./../images/stats.png');
+}
+.drawer-on.highlights-on .drawer{
+    background-image: url('./../images/highlights.png');
+}
+.drawer-on.boxscore-on .drawer{
+    background-image: url('./../images/boxscore_u.png');
+}
+.drawer-on.todaysgames-on .drawer{
+    background-image: url('./../images/todaysgames.png');
+}
+.drawer-on.settings-on .drawer{
+    background-image: url('./../images/settings.png');
+}

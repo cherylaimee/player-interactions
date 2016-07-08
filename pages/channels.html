@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">        
+
+<head>
+    <meta charset="utf-8">
+    <title>p-blankslate</title>
+    <link rel="stylesheet" href="./../css/default.css">
+    <link rel="stylesheet" href="./../css/branding.css">
+    <link rel="stylesheet" href="./../css/animations.css">
+    <link rel="stylesheet" href="./../css/backgrounds.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./../js/keyboard.js"></script>
+    <!--<script src="http://nekman.github.io/keynavigator/keynavigator.js"></script>-->
+</head>
+
+<body class="top">
+
+    <div class="discover-tiles-page">
+        <div class="staticheader header">
+            <div class="logo"></div>
+            <div class="header-nav">
+                <div id="channels" class="navitem active" tabindex="0">Channels</div>
+                <div id="discover" class="navitem" tabindex="0">Discover</div>
+                <div id="watchlist" class="navitem" tabindex="0">Watchlist</div>
+            </div>
+        </div>
+        
+        <div class="tiles-container page-body">
+             <button id="discover-tile1" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile2" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile3" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile4" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile5" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile6" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile7" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile8" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile9" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile10" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile11" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile12" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile13" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile14" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile15" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile16" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile17" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile18" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile19" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile20" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile21" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile22" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <button id="discover-tile23" class="tile" tabindex="0">
+                <div class="scrim"></div>
+                <div class="checkmark"></div>
+                
+            </button>
+            <div class="margin"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+window.onload = function() {
+    // short timeout
+    setTimeout(function() {
+        $(document.body).scrollLeft(0);
+    }, 5);
+};
+
+var distance = ($(window).height())/3
+
+var tileTop = $('.tile').filter(function () {
+    return $(this).offset().top < distance;
+});
+
+tileTop.addClass('top');
+
+$(document).keydown(function(e) {
+        var scrollWidth = ($(window).width()/3);
+        var enterButton = ((e.which == 13) || (e.which === 13))
+        var arrowDown = (e.which == 40)
+        var arrowUp = (e.which == 38)
+        var arrowLeft = (e.which == 37)
+        var arrowRight = (e.which == 39)
+        var selectButton = (e.which == 83)
+        var scrollWidth = ($(window).width()/2.25);
+        var tileOffset = ($('#discover-tile2').width()*2);
+
+        if (selectButton && (!$('body').hasClass('top'))) {
+            $('body button.focused').addClass('selected-inprogress');
+            setTimeout(function () {
+                $('body button.focused').removeClass('selected-inprogress');
+                $('body button.focused').toggleClass('selected');
+            }, 350);    
+        }
+        if (enterButton && (!$('body').hasClass('top'))) {
+            window.location.href="./../pages/channel.html"
+        }
+
+        if (arrowUp && ($('body button.focused').hasClass('top'))) {
+                $('body').addClass('top');
+                
+                $('body button.focused').prevAll('button').addClass('last');
+                $('.tile').navigate('destroy');
+        }
+        if (arrowDown && $('body').hasClass('top')) {
+                $('body').removeClass('top');
+                setTimeout(function () {
+                    $('body button').removeClass('last');
+                }, 1);
+                $('.tile:not(.last)').navigate({
+                    activeClass: 'focused',
+                    mouse: false,
+                    onFocus: function(){
+                    }
+                });
+        }
+        if (arrowRight && $('body').hasClass('top')) {
+            window.location.href="./../pages/discover.html"
+        }
+        if (($('body button.focused').offset().left + $("#discover-tile2").width()) >= (($(window).width()) - tileOffset)) {
+                        $('body').toggleClass('edge');
+                        console.log('huh');
+                    } 
+        if (arrowRight && ($('body').hasClass("edge")) ) {              
+                $('html, body').animate({
+                    scrollLeft: '+='+scrollWidth
+                }, 400);
+            }
+        if (arrowLeft && ($('body').hasClass("edge")) ) {              
+            $('html, body').animate({
+                scrollLeft: '-='+scrollWidth
+            }, 400);
+        }
+        if ((arrowLeft) && ($('#discover-tile1').hasClass("focused"))) {              
+            $('html, body').animate({
+                scrollLeft: '-='+(scrollWidth * .5)
+            }, 400);
+        }
+            });
+
+// $('.tile').navigate({
+//       activeClass: 'focused',
+//       mouse: false,
+//     onFocus: function(){
+//    }
+// });
+
+</script>
+
+</html>
